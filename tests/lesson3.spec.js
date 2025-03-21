@@ -261,7 +261,7 @@ test('Scrollbars Test', async ({ page }) => {
     console.log(`Button visible after scrolling: ${isVisibleAfter}`);
     
     // Wait a moment for any scrolling animation to complete
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(467);
     
     // Now click the button
     await hidingButton.click();
