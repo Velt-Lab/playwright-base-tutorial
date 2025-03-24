@@ -18,7 +18,7 @@ test('Dynamic ID Button Click', async ({ page }) => {
     // XPath using contains() for dynamic ID handling
     const dynamicButton = "//button[contains(@id, 'btn')]";
 
-    await page.locator(dynamicButton).click();
+    await page.locator('button#greenButton').click();
     await expect(page.locator(dynamicButton)).toBeVisible(); // Ensure button remains interactable
 });
 

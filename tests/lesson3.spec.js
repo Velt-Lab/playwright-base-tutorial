@@ -159,7 +159,10 @@ test('Dynamic Table Test', async ({ page }) => {
     
     // Extract the numeric value using a more forgiving regex
     const labelCpuMatch = cpuLabelText.match(/Chrome CPU: ([\d.]+)%/);
-    const labelCpuValue = labelCpuMatch ? labelCpuMatch[1] : null;
+    if (!labelCpuMatch) { 
+        throw new Error("Failed to extract CPU Value From Label text.");
+    }    
+    const labelCpuValue = labelCpuMatch[1];
     
     console.log(`CPU value from label: ${labelCpuValue}%`);
     
